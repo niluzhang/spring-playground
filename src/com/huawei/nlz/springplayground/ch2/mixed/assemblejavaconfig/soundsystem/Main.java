@@ -9,6 +9,8 @@ public class Main {
 
         MediaPlayer player = (MediaPlayer) context.getBean("cdPlayer");
         player.play();
+
+        context.close();
     }
 
 }

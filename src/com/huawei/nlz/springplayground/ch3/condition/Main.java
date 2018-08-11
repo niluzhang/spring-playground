@@ -9,6 +9,8 @@ public class Main {
 
         CompactDisc cd = (CompactDisc) context.getBean("compactDisc");
         cd.play();
+
+        context.close();
     }
 
 }

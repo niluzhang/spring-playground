@@ -12,6 +12,8 @@ public class Main {
 
         MediaPlayer player2 = (MediaPlayer) context.getBean("cdPlayer_2");
         player2.play();
+
+        context.close();
     }
 
 }

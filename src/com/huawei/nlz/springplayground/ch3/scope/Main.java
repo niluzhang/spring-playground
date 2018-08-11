@@ -24,6 +24,8 @@ public class Main {
 
         cd_2 = (CompactDisc) context.getBean("sgtPeppers_2");
         System.out.println("hashCode of sgtPeppers_2 is: " + cd_2.hashCode());
+
+        context.close();
     }
 
 }

@@ -12,6 +12,8 @@ public class Main {
 
         CompactDisc cd_2 = (CompactDisc) context.getBean("compactDisc_2");
         cd_2.play();
+
+        context.close();
     }
 
 }

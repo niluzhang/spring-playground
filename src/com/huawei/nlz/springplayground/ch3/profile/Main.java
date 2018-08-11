@@ -19,6 +19,8 @@ public class Main {
         AnnotationConfigApplicationContext context1 = new AnnotationConfigApplicationContext(CompactDiscConfig.class);
         CompactDisc cd1 = (CompactDisc) context1.getBean("compactDisc");
         cd1.play();
+
+        context.close();
     }
 
 }

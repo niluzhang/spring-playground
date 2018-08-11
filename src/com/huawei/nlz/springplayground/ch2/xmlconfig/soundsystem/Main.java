@@ -18,6 +18,8 @@ public class Main {
 
         MediaPlayer player4 = (MediaPlayer) context.getBean("cdPlayer_4");
         player4.play();
+
+        context.close();
     }
 
 }
