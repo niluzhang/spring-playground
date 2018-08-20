@@ -14,6 +14,11 @@ public class Main {
         cd_2.play();
 
         context.close();
+
+        AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(EurekaConfig.class);
+
+        EurekaInitializer ei = (EurekaInitializer) context2.getBean("eurekaInitializer");
+        System.out.println(ei.getServiceName());
     }
 
 }
