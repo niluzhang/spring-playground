@@ -19,6 +19,8 @@ public class Main {
 
         EurekaInitializer ei = (EurekaInitializer) context2.getBean("eurekaInitializer");
         System.out.println(ei.getServiceName());
+        
+        context2.close();
     }
 
 }
