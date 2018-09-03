@@ -21,6 +21,7 @@ public class Main {
         cd1.play();
 
         context.close();
+        context1.close();
     }
 
 }
