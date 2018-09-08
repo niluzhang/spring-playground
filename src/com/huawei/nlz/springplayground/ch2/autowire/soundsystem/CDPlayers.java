@@ -9,7 +9,7 @@ import java.util.*;
 public class CDPlayers {
 
     /*
-     * Spring自动装配数组、集合、Map时，是把同类型的元素数据装配进集合，而不是装配一个同类型的集合。
+     * Spring自动装配注入数组、集合、Map时，是把应用上下文中对应类型的bean装配进集合，而不是直接查找一个对应类型的集合然后注入。
      */
     @Autowired
     private MediaPlayer[] mediaPlayerArr;
