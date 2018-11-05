@@ -1,4 +1,4 @@
-package com.huawei.nlz.springplayground.ch3.qualifier;
+package com.huawei.nlz.springplayground.ch3.ambiguity.qualifier2;
 
 import org.springframework.stereotype.Component;
 
