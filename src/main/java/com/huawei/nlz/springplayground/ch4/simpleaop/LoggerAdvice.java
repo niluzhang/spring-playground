@@ -1,11 +1,15 @@
 package com.huawei.nlz.springplayground.ch4.simpleaop;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
+
+import java.util.Arrays;
 
 /**
  * 日志通知类，用于打印方法的入参。
  */
+@Slf4j
 public class LoggerAdvice implements MethodInterceptor {
 
     @Override
@@ -20,10 +24,9 @@ public class LoggerAdvice implements MethodInterceptor {
      */
     private void before(MethodInvocation invocation) {
         Object[] args = invocation.getArguments();
-        for (Object arg : args) {
-            System.out.print(arg + " ");
+        if(log.isInfoEnabled()){
+            log.info(Arrays.asList(args).toString());
         }
-        System.out.println();
     }
 
 }

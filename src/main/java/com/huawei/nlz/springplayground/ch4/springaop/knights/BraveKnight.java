@@ -1,15 +1,16 @@
 package com.huawei.nlz.springplayground.ch4.springaop.knights;
-  
+
 public class BraveKnight implements Knight {
 
-  private Quest quest;
+    private Quest quest;
 
-  public BraveKnight(Quest quest) {
-    this.quest = quest;
-  }
+    public BraveKnight(Quest quest) {
+        this.quest = quest;
+    }
 
-  public void embarkOnQuest() {
-    quest.embark();
-  }
+    @Override
+    public void embarkOnQuest() {
+        quest.embark();
+    }
 
 }
