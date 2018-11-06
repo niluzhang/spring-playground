@@ -18,7 +18,7 @@
         <aspectj.version>1.9.1</aspectj.version>
         <lombok.version>1.16.18</lombok.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
     </properties>
 
     <dependencies>
@@ -84,11 +84,11 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <!-- SLF4j -->
+        <!-- logback -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
 
     </dependencies>
