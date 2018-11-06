@@ -1,7 +1,9 @@
 package com.huawei.nlz.springplayground.ch3.runtimevalueinject;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@Slf4j
 public class Main {
 
     public static void main(String[] args) {
@@ -18,8 +20,10 @@ public class Main {
         AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(EurekaConfig.class);
 
         EurekaInitializer ei = (EurekaInitializer) context2.getBean("eurekaInitializer");
-        System.out.println(ei.getServiceName());
-        
+        if (log.isInfoEnabled()) {
+            log.info(ei.getServiceName());
+        }
+
         context2.close();
     }
 

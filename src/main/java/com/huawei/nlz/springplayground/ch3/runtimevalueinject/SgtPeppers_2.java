@@ -1,11 +1,13 @@
 package com.huawei.nlz.springplayground.ch3.runtimevalueinject;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.text.MessageFormat;
 
 @Component("compactDisc_2")
+@Slf4j
 public class SgtPeppers_2 implements CompactDisc {
 
     private String title;
@@ -22,7 +24,9 @@ public class SgtPeppers_2 implements CompactDisc {
 
     @Override
     public void play() {
-        System.out.println(MessageFormat.format("sgtPeppers_2 play. title is {0}, artist is {1}.", title, artist));
+        if (log.isInfoEnabled()) {
+            log.info(MessageFormat.format("sgtPeppers_2 play. title is {0}, artist is {1}.", title, artist));
+        }
     }
 
 }

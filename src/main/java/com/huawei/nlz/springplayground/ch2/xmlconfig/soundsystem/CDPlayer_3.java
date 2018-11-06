@@ -1,5 +1,8 @@
 package com.huawei.nlz.springplayground.ch2.xmlconfig.soundsystem;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CDPlayer_3 implements MediaPlayer {
 
     private CompactDisc cd;
@@ -9,10 +12,14 @@ public class CDPlayer_3 implements MediaPlayer {
         cd.play();
     }
 
-    public void setCompactDisc(CompactDisc cd){
-        System.out.println("enter CDPlayer_3's setCompactDisc(CompactDisc).");
+    public void setCompactDisc(CompactDisc cd) {
+        if (log.isInfoEnabled()) {
+            log.info("enter CDPlayer_3's setCompactDisc(CompactDisc).");
+        }
         this.cd = cd;
-        System.out.println("leave CDPlayer_3's setCompactDisc(CompactDisc).");
+        if (log.isInfoEnabled()) {
+            log.info("leave CDPlayer_3's setCompactDisc(CompactDisc).");
+        }
     }
 
 }

@@ -1,9 +1,11 @@
 package com.huawei.nlz.springplayground.ch2.javaconfig.soundsystem;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration     // @Configuration注解表明这个类是一个配置类。
+@Slf4j
 public class CDPlayerConfig {
 
     @Bean
@@ -13,7 +15,9 @@ public class CDPlayerConfig {
      * @Bean(name="beanName")，可以指定bean的id。
      */
     public CompactDisc sgtPeppers() {
-        System.out.println("enter CDPlayerConfig's sgtPeppers().");
+        if (log.isInfoEnabled()) {
+            log.info("enter CDPlayerConfig's sgtPeppers().");
+        }
         return new SgtPeppers();
     }
 
@@ -23,7 +27,9 @@ public class CDPlayerConfig {
      * sgtPeppers()方法上由于添加了@Bean注解，Spring会拦截所有对此方法的调用，直接返回该方法创建的bean，而不是实际进行调用。
      */
     public MediaPlayer cdPlayer() {
-        System.out.println("enter CDPlayerConfig's cdPlayer().");
+        if (log.isInfoEnabled()) {
+            log.info("enter CDPlayerConfig's cdPlayer().");
+        }
         return new CDPlayer(sgtPeppers());
     }
 
@@ -34,7 +40,9 @@ public class CDPlayerConfig {
      * 总结一下，@Bean注解作用的方法，如果带了参数，Spring在创建这个bean的时候对于依赖参数，走自动装配逻辑，按类型装配。
      */
     public MediaPlayer cdPlayer_2(CompactDisc cd) {
-        System.out.println("enter CDPlayerConfig's cdPlayer_2().");
+        if (log.isInfoEnabled()) {
+            log.info("enter CDPlayerConfig's cdPlayer_2().");
+        }
         return new CDPlayer(cd);
     }
 

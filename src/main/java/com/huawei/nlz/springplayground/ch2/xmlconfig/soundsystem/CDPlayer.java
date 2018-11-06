@@ -1,13 +1,20 @@
 package com.huawei.nlz.springplayground.ch2.xmlconfig.soundsystem;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CDPlayer implements MediaPlayer {
 
     private CompactDisc cd;
 
     public CDPlayer(CompactDisc cd) {
-        System.out.println("enter CDPlayer's constructor: CDPlayer(CompactDisc).");
+        if (log.isInfoEnabled()) {
+            log.info("enter CDPlayer's constructor: CDPlayer(CompactDisc).");
+        }
         this.cd = cd;
-        System.out.println("leave CDPlayer's constructor: CDPlayer(CompactDisc).");
+        if (log.isInfoEnabled()) {
+            log.info("leave CDPlayer's constructor: CDPlayer(CompactDisc).");
+        }
     }
 
     @Override

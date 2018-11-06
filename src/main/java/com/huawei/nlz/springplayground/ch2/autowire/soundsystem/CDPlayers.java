@@ -1,11 +1,13 @@
 package com.huawei.nlz.springplayground.ch2.autowire.soundsystem;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 @Component("cdPlayers")
+@Slf4j
 public class CDPlayers {
 
     /*
@@ -22,8 +24,10 @@ public class CDPlayers {
 
     @Autowired
     public void printInfo() {
-        System.out.println(Arrays.toString(mediaPlayerArr));
-        System.out.println(mediaPlayerList);
-        System.out.println(mediaPlayerMap);
+        if (log.isInfoEnabled()) {
+            log.info(Arrays.toString(mediaPlayerArr));
+            log.info(String.valueOf(mediaPlayerList));
+            log.info(String.valueOf(mediaPlayerMap));
+        }
     }
 }

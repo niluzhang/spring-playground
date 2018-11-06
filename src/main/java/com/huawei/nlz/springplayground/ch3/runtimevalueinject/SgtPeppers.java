@@ -1,7 +1,10 @@
 package com.huawei.nlz.springplayground.ch3.runtimevalueinject;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.text.MessageFormat;
 
+@Slf4j
 public class SgtPeppers implements CompactDisc {
 
     private String title;
@@ -14,7 +17,9 @@ public class SgtPeppers implements CompactDisc {
 
     @Override
     public void play() {
-        System.out.println(MessageFormat.format("sgtPeppers play. title is {0}, artist is {1}.", title, artist));
+        if (log.isInfoEnabled()) {
+            log.info(MessageFormat.format("sgtPeppers play. title is {0}, artist is {1}.", title, artist));
+        }
     }
 
 }
