@@ -19,7 +19,6 @@
         <lombok.version>1.16.18</lombok.version>
         <fastjson.version>1.2.47</fastjson.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
     </properties>
 
     <dependencies>
