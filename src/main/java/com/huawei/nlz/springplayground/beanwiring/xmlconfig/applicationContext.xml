@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+      http://www.springframework.org/schema/cache
+      http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+
+    <!--声明一个bean。没有指定id的话将会根据全限定类名来命名。-->
+    <bean id="sgtPeppers" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.SgtPeppers" />
+
+    <!--构造器注入，注入另一个bean。 -->
+    <bean id="cdPlayer" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.CDPlayer">
+        <constructor-arg ref="sgtPeppers" />
+    </bean>
+
+    <!--构造器注入，注入另一个bean和字面常量。 -->
+    <bean id="cdPlayer_2" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.CDPlayer_2">
+        <constructor-arg ref="sgtPeppers" />
+        <constructor-arg value="v1" />
+        <constructor-arg value="nlzCDPlayer" />
+    </bean>
+
+    <!--Setter注入，注入另一个bean。 -->
+    <bean id="cdPlayer_3" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.CDPlayer_3">
+        <property name="compactDisc" ref="sgtPeppers" />
+    </bean>
+
+    <!-- Setter注入，注入另一个bean和字面常量。 -->
+    <bean id="cdPlayer_4" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.CDPlayer_4">
+        <property name="version" value="v2.0" />
+        <property name="name" value="nlzCDPlayerV2.0" />
+        <property name="compactDisc" ref="sgtPeppers" />
+    </bean>
+
+    <!--装配集合，可参考：https://blog.csdn.net/luckey_zh/article/details/46674779。 -->
+
+</beans>
