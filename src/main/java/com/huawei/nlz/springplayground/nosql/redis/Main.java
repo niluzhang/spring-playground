@@ -34,7 +34,7 @@ public class Main {
         StringRedisTemplate stringRedisTemplate = (StringRedisTemplate) applicationContext.getBean("stringRedisTemplate");
         stringRedisTemplate.opsForValue().set("time", new Date().toString());
 
-        /**
+        /*
          * Redis事务demo
          */
         stringRedisTemplate.execute(new SessionCallback<Void>() {
@@ -47,7 +47,7 @@ public class Main {
                 }
                 operations.multi();
                 try {
-                    /**
+                    /*
                      * 让线程睡眠10秒钟，在这段时间里你可以打开其他redis客户端修改watchedKey对应的值
                      */
                     TimeUnit.SECONDS.sleep(10);
@@ -56,7 +56,7 @@ public class Main {
                 }
                 operations.opsForValue().set((K)"name", (V)"nlz");
                 List<Object> list = operations.exec();
-                /**
+                /*
                  * 如果没有通过其他客户端修改watchedKey，那么这里事务能执行成功，name被改为nlz，list为[true];
                  * 如果通过其他客户端修改了watchedKey，那么事务就执行失败，name未能改成nlz，list为[]。
                  */
