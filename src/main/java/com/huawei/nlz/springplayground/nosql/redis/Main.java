@@ -35,6 +35,11 @@ public class Main {
         stringRedisTemplate.opsForValue().set("time", new Date().toString());
 
         /*
+         * RedisCallback: doInRedis回调中的操作可以在新的connection中做（设置enableTransactionSupport为false），并且入参是RedisConnection，是一个较为底层的类。
+         * SessionCallback：execute回调中的操作与调用者redisTemplate是在同一个Redis会话下，并且入参是RedisOperations，是一个较为上层的类。
+         */
+
+        /*
          * Redis事务demo
          */
         stringRedisTemplate.execute(new SessionCallback<Void>() {
