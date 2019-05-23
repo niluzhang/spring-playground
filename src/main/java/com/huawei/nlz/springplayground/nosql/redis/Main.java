@@ -35,19 +35,14 @@ public class Main {
         stringRedisTemplate.opsForValue().set("time", new Date().toString());
 
         /*
-         * RedisCallback: doInRedis回调中的操作可以在新的connection中做（设置enableTransactionSupport为false），并且入参是RedisConnection，是一个较为底层的类。
-         * SessionCallback：execute回调中的操作与调用者redisTemplate是在同一个Redis会话下，并且入参是RedisOperations，是一个较为上层的类。
-         */
-
-        /*
          * Redis事务demo
          */
         stringRedisTemplate.execute(new SessionCallback<Void>() {
             @Override
             public <K, V> Void execute(RedisOperations<K, V> operations) throws DataAccessException {
                 String watchedKey = "school";
-                operations.watch((K)watchedKey);
-                if(log.isInfoEnabled()){
+                operations.watch((K) watchedKey);
+                if (log.isInfoEnabled()) {
                     log.info("watching {}", watchedKey);
                 }
                 operations.multi();
@@ -59,13 +54,13 @@ public class Main {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                operations.opsForValue().set((K)"name", (V)"nlz");
+                operations.opsForValue().set((K) "name", (V) "nlz");
                 List<Object> list = operations.exec();
                 /*
                  * 如果没有通过其他客户端修改watchedKey，那么这里事务能执行成功，name被改为nlz，list为[true];
                  * 如果通过其他客户端修改了watchedKey，那么事务就执行失败，name未能改成nlz，list为[]。
                  */
-                if(log.isInfoEnabled()){
+                if (log.isInfoEnabled()) {
                     log.info("transaction result is {}", list);
                 }
 
