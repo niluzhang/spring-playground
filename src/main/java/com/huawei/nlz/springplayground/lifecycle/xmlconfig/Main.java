@@ -16,7 +16,7 @@ public class Main {
         if (log.isInfoEnabled()) {
             log.info("容器初始化成功");
         }
-        Person person = factory.getBean("person", Person.class);
+        Person person = factory.getBean("demoPerson", Person.class);
         if (log.isInfoEnabled()) {
             log.info("Person是: {}", String.valueOf(person));
         }

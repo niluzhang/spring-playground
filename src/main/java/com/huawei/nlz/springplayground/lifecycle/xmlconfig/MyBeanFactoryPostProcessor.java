@@ -22,7 +22,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
         if (log.isInfoEnabled()) {
             log.info("BeanFactoryPostProcessor调用postProcessBeanFactory方法");
         }
-        BeanDefinition bd = arg0.getBeanDefinition("person");
+        BeanDefinition bd = arg0.getBeanDefinition("demoPerson");
         bd.getPropertyValues().addPropertyValue("phone", "110");
     }
 
