@@ -24,7 +24,7 @@ public class LoggerAdvice implements MethodInterceptor {
      */
     private void before(MethodInvocation invocation) {
         Object[] args = invocation.getArguments();
-        if(log.isInfoEnabled()){
+        if (log.isInfoEnabled()) {
             log.info(Arrays.asList(args).toString());
         }
     }

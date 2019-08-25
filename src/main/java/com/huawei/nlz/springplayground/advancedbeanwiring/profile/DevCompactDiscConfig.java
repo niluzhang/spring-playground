@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 public class DevCompactDiscConfig {
 
     @Bean("compactDisc")
-    public CompactDisc compactDisc(){
+    public CompactDisc compactDisc() {
         return new DevSgtPeppers();
     }
 

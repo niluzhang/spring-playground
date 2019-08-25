@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class CompactDiscConfig {
 
     @Bean
-    public CompactDisc getSgtPeppers(){
+    public CompactDisc getSgtPeppers() {
         return new SgtPeppers();
     }
 }

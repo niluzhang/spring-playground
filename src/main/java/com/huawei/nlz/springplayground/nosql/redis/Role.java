@@ -24,7 +24,7 @@ public class Role implements Serializable {   //注意对象必须要实现Seria
     private List<String> authIds;
 
     @Override
-    public String toString(){
+    public String toString() {
         return JSON.toJSONString(this);
     }
 }

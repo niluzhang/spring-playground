@@ -8,15 +8,15 @@
       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="knight" class="com.huawei.nlz.springplayground.aop.springaop.knights.BraveKnight">
-        <constructor-arg ref="quest" />
+        <constructor-arg ref="quest"/>
     </bean>
 
     <bean id="quest" class="com.huawei.nlz.springplayground.aop.springaop.knights.SlayDragonQuest">
-        <constructor-arg value="#{T(System).out}" />
+        <constructor-arg value="#{T(System).out}"/>
     </bean>
 
     <bean id="minstrel" class="com.huawei.nlz.springplayground.aop.springaop.knights.Minstrel">
-        <constructor-arg value="#{T(System).out}" />
+        <constructor-arg value="#{T(System).out}"/>
     </bean>
 
     <aop:config>

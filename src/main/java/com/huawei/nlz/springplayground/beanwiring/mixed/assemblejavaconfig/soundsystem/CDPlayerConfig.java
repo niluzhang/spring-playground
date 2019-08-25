@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class CDPlayerConfig {
 
     @Bean("cdPlayer")
-    public MediaPlayer getCDPlayer(CompactDisc cd){
+    public MediaPlayer getCDPlayer(CompactDisc cd) {
         return new CDPlayer(cd);
     }
 

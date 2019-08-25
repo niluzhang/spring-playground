@@ -14,7 +14,7 @@
       http://www.springframework.org/schema/cache
       http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
 
-    <import resource="mediaPlayer.xml"/>
-    <import resource="compactDisc.xml"/>
+    <bean id="obsStorageService" class="com.huawei.nlz.springplayground.lazyinit.xmlconfig.ObsStorageService"
+          lazy-init="true"/>
 
 </beans>

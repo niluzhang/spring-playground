@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /*
          * Spring通过spring.profiles.active和spring.profiles.default确定哪个profile处于激活。
          * 优先使用spring.profiles.active，如果spring.profiles.active没有设置，则使用spring.profiles.default。
