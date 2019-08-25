@@ -14,6 +14,7 @@
       http://www.springframework.org/schema/cache
       http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
 
+    <!-- lazy-init属性指示是否延迟初始化 -->
     <bean id="obsStorageService" class="com.huawei.nlz.springplayground.lazyinit.xmlconfig.ObsStorageService"
           lazy-init="true"/>
 
