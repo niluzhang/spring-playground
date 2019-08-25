@@ -114,7 +114,7 @@ public class Person implements BeanFactoryAware, BeanNameAware,
     @Override
     public void destroy() throws Exception {
         if (log.isInfoEnabled()) {
-            log.info("ibleBean接口】调用DisposableBean.destroy()");
+            log.info("【DisposableBean接口】调用DisposableBean.destroy()");
         }
     }
 
