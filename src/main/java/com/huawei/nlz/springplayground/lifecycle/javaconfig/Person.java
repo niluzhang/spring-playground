@@ -40,22 +40,8 @@ public class Person implements BeanFactoryAware, BeanNameAware,
         return name;
     }
 
-    public void setName(String name) {
-        if (log.isInfoEnabled()) {
-            log.info("【注入属性】注入属性name");
-        }
-        this.name = name;
-    }
-
     public String getAddress() {
         return address;
-    }
-
-    public void setAddress(String address) {
-        if (log.isInfoEnabled()) {
-            log.info("【注入属性】注入属性address");
-        }
-        this.address = address;
     }
 
     public int getPhone() {
