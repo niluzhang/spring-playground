@@ -1,5 +1,5 @@
 /**
- * Spring Bean的延迟初始化。
+ * ApplicationContext中单例Bean的延迟初始化。
  */
 
 package com.huawei.nlz.springplayground.lazyinit;
