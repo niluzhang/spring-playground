@@ -15,7 +15,10 @@
       http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
 
     <!--声明一个bean。没有指定id的话将会根据全限定类名来命名。-->
-    <bean id="sgtPeppers" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.SgtPeppers"/>
+    <bean id="sgtPeppers" name="sgtPeppersAlias1,sgtPeppersAlias2" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.SgtPeppers"/>
+    <!--指定bean的别名。 -->
+    <alias name="sgtPeppers" alias="sgtPeppersAlias3"/>
+    <alias name="sgtPeppersAlias3" alias="sgtPeppersAlias4"/>
 
     <!--构造器注入，注入另一个bean。 -->
     <bean id="cdPlayer" class="com.huawei.nlz.springplayground.beanwiring.xmlconfig.soundsystem.CDPlayer">
